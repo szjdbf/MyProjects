@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $("#b").click(function () {
+                //三个参数:url/data/success
+                $.post("ajaxServlet", {"username": $("#username").val()}, function (data) {
+                    alert(data);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" name="username" id="username">
+
+<button id="b">提交</button>
+
+
+<script>
+    var a = {"username": "zhangsan", "age": 152};
+    console.log(JSON.stringify(a));//将JSON对象转为字符串
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>显示or隐藏</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        var div = $("div");
+        $("#b1").click(function () {
+            div.show(3000);
+        });
+        $("#b2").click(function () {
+            div.hide(3000);
+        });
+        $("#b3").click(function () {
+            div.toggle(3000);
+        });
+        $("#b4").click(function () {
+            div.slideUp(3000);
+        });
+        $("#b5").click(function () {
+            div.slideDown(3000);
+        });
+        $("#b6").click(function () {
+            div.fadeOut(3000);
+        });
+        $("#b7").click(function () {
+            div.fadeIn(3000);
+        });
+        $("#b8").click(function () {
+            div.fadeTo(3000, 0.5);
+        });
+    });
+</script>
+<button id="b1">显示</button>
+<button id="b2">隐藏</button>
+<button id="b3">显示/隐藏</button>
+<button id="b4">向上隐藏</button>
+<button id="b5">向下显示</button>
+<button id="b6">淡出</button>
+<button id="b7">淡入</button>
+<button id="b8">淡出到0.5</button>
+
+<div id="div1">
+    <img src="img/abc.jpg" width="500px">
+</div>
+</body>
+</html>

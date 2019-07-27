@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图案例</title>
+</head>
+<body>
+<input type="button" value="上一张" id="last">
+<input type="button" value="下一张" id="next">
+<div>当前时间：<span id="span"></span></div>
+<img src="../image/banner_1.jpg" id="img" width="100%">
+<script>
+    // var time=new Date().toLocaleString();
+    var span = document.getElementById("span");
+    span.innerHTML = new Date().toLocaleString();
+    setInterval(function () {
+        span.innerHTML = new Date().toLocaleString()+"<hr>";
+    }, 1000);
+
+
+    var img = document.getElementById("img");
+    var last = document.getElementById("last");
+    var next = document.getElementById("next");
+    var num = 0;
+
+    var id = setInterval(a, 2000);
+
+    function a() {
+        num++;
+        img.src = "../image/banner_" + (Math.abs(num % 3) + 1) + ".jpg";
+    }
+
+    last.onclick = function () {
+        img.src = "../image/banner_" + (Math.abs((--num % 3)) + 1) + ".jpg";
+        //清空定时器
+        clearInterval(id);
+        //设置新的定时器
+        id = setInterval(a, 2000);
+
+    };
+    next.onclick = function () {
+        img.src = "../image/banner_" + (Math.abs((++num % 3)) + 1) + ".jpg";
+        //清空定时器
+        clearInterval(id);
+        //设置新的定时器
+        id = setInterval(a, 2000);
+    };
+</script>
+</body>
+</html>

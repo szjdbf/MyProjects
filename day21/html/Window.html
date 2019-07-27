@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Window对象</title>
+</head>
+<body>
+<center><span id="sec" style="color: crimson">5</span>秒后，将跳转到首页</center>
+<script>
+    var sec = document.getElementById("sec");
+    var i = setInterval(function () {
+        var s = sec.innerHTML;
+        s--;
+        if (!s) {
+            clearInterval(i);
+            location.href = "http://ntlias-stu.boxuegu.com/#/login";
+        }
+        sec.innerHTML = s;
+    }, 1000);
+</script>
+</body>
+</html>

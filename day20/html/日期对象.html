@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>日期对象</title>
+</head>
+<body>
+<script>
+    var date = new Date();
+    document.write(date);
+    var local = date.toLocaleString();
+    document.write(local);
+
+    var time = date.getTime();
+
+    document.write("<a href='https://www.baidu.com?wd=" + time + "'>百度</a>");
+
+</script>
+
+</body>
+</html>

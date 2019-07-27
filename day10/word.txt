@@ -1,0 +1,7 @@
+confident
+smug
+shy
+age
+happy
+angry
+sad

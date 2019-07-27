@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid indianred;
+        }
+    </style>
+</head>
+<body>
+用户名：<input type="text" name="username">
+密码：<input type="text" name="password">
+<input type="button" value="提交" id="submit">
+
+<div id="div"></div>
+<script>
+    var username = document.getElementsByName("username")[0];
+    var password = document.getElementsByName("password")[0];
+    document.getElementById("submit").onclick = function () {
+        var username_value = username.value.trim();
+        var password_value = password.value.trim();
+        if (!username_value || !password_value) {
+            alert("账号为空或密码为空");
+            return;
+        }
+        alert("您的账号为" + username.value.trim() + "您的密码为" + password.value);
+    };
+
+    //createTextNode 文本对象
+    // creatComment注释对象
+    var comment = document.createComment("这是一段注释");
+    var div = document.getElementById("div");
+    div.appendChild(comment);//在div中添加注释对象
+    console.log(comment);
+
+    var text = document.createTextNode("这是一段文本信息");
+    div.appendChild(text);//在div中添加文本信息
+
+    div.removeChild(text);//移出div中的文本信息
+</script>
+</body>
+</html>

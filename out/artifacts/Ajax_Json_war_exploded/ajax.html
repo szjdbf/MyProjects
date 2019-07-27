@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <script>
+        $(function () {
+            $("#b").click(function () {
+                //Ajax提交数据
+                $.ajax({
+                    url: "ajaxServlet",
+                    type: "post",
+                    data: {"username": $("#username").val()},
+                    dataType: "text",//浏览器返回的响应格式
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<input type="text" name="username" id="username">
+
+<button id="b">提交</button>
+</body>
+</html>

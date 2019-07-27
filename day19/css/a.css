@@ -1,0 +1,19 @@
+div {
+    color: #ff5bd4;
+    font-size: 25px;
+    font-family: 宋体;
+}
+
+p {
+    font-size: 30px;
+    color: #ff7c0a;
+    font-family: Consolas;
+}
+
+#i1{
+    color: antiquewhite;
+}
+
+.c1{
+    color: chartreuse;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        setTimeout(function () {
+            $("#ad").slideDown("slow");
+        }, 1000);
+        setTimeout(function () {
+            $("#ad").slideUp("slow");
+        }, 3000);
+    });
+
+
+</script>
+
+<div id="ad" style="display: none">
+    <img src="img/abc.jpg" width="100%"/></div>
+</body>
+</html>

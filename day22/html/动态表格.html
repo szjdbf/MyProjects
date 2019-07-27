@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+
+    <style>
+        table {
+            border: 1px solid #ff32d2;
+            margin: auto;
+            width: 500px;
+        }
+
+        td, th {
+            text-align: center;
+            border: 1px solid indianred;
+        }
+
+        div {
+            text-align: center;
+            margin: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div>
+    <form action="#">
+        <input type="text" id="id" placeholder="请输入编号">
+        <input type="text" id="name" placeholder="请输入姓名">
+        <input type="text" id="gender" placeholder="请输入性别">
+        <input type="submit" value="添加" id="btn_add">
+    </form>
+</div>
+
+
+<table>
+    <caption>学生信息表</caption>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>令狐冲</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="del(this);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>任我行</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="del(this);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>岳不群</td>
+        <td>?</td>
+        <td><a href="javascript:void(0);" onclick="del(this);">删除</a></td>
+    </tr>
+
+</table>
+<script>
+    var btn_add = document.getElementById("btn_add");
+    //给添加按钮添加事件
+    btn_add.onclick = function () {
+        //获取输入框的内容
+        var id = document.getElementById("id").value.trim();
+        var name = document.getElementById("name").value.trim();
+        var gender = document.getElementById("gender").value.trim();
+        if (!(id && name && gender)) {
+            alert("编号，姓名或性别为空，请重新填写");
+            return;
+        }
+
+        var table = document.getElementsByTagName("table")[0];
+        table.innerHTML += "<tr><td>" + id + "</td><td>" +
+            name + "</td><td>" +
+            gender + "</td><td>" +
+            "<a href='javascript:void(0);' onclick='del(this);'>" +
+            "删除</a></td></tr>";
+
+        //清空输入框的内容
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("gender").value = "";
+    };
+
+    //删除按钮的方法
+    function del(a) {
+        //确实是否删除
+        var b = confirm("是否删除");
+        if (!b) {
+            return;
+        }
+        var tr = a.parentNode.parentNode;
+        var table = tr.parentNode;
+        table.removeChild(tr);
+    }
+</script>
+</body>
+</html>

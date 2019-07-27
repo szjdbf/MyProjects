@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Element</title>
+</head>
+<body>
+<a href="#">百度</a>
+<input type="button" value="百度一下">
+
+<script>
+    var a = document.getElementsByTagName("a")[0];
+    //根据属性获取值
+    document.write(a.getAttribute("href") + "<br>");
+
+    var meta = document.getElementsByTagName("meta")[0];
+    document.write(meta.getAttribute("charset"));
+
+    var btn = document.getElementsByTagName("input")[0];
+    btn.onclick = function () {
+        //设置属性值
+        a.setAttribute("href", "http://www.baidu.com");
+        document.write(a.getAttribute("href"));
+    }
+
+</script>
+</body>
+</html>

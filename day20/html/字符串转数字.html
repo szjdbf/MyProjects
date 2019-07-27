@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>字符串转数字</title>
+</head>
+<body>
+<script>
+    var s1 = +"99";
+    //字符串转数字时，只需在字符串前面加上+号
+    var b = s1 + 1;
+    document.write(b + "<br>");
+
+    var s2 = +"abc";
+    document.write(s2 + "<br>");//当不是数字时，会变为NaN
+
+    var b1 = +true;
+    document.write(b1);//布尔类型转数字时，true为1，false为0
+
+</script>
+</body>
+</html>

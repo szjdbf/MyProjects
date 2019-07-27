@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        //js对象转jq对象   a --->$(a)
+        //jq对象转js对象   $(a)--->a[0]
+        //所有的this都是js对象
+        //
+        // if(bool){
+        //     return true==continue//继续循环
+        //     return false==break;//结束循环
+        // }
+
+        $(function () {
+            //直接使用jq对象的each方法进行遍历,回调函数中可以传递两个参数,第一个是索引,第二个是遍历的元素对象
+            $("ul li").each(function (index, element) {
+                // if ($(element).html() == "山西") {
+                //     return true;
+                // }
+                console.log(index + " : " + $(element).html());
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>河南</li>
+    <li>河北</li>
+    <li>山西</li>
+    <li>陕西</li>
+    <li>湖南</li>
+    <li>湖北</li>
+</ul>
+</body>
+</html>

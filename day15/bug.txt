@@ -1,0 +1,5 @@
+异常所在的方法add
+异常的类型ArithmeticException
+异常的原因/ by zero
+------------
+本次共发现1个异常

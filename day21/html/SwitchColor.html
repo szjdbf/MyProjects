@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>变换颜色</title>
+</head>
+<body bgcolor="#dc143c" id="body">
+
+<script>
+    var bg = document.getElementById("body");
+    setInterval(function () {
+        var r = Math.random() * 256;
+        var g = Math.random() * 256;
+        var b = Math.random() * 256;
+        bg.bgColor = "rgb(" + r + "," + g + "," + b + ")";
+    }, 1000);
+</script>
+</body>
+</html>

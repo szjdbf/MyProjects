@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        //入口函数,在dom加载完成之后执行
+        $(function () {
+            $("button").click(function () {
+                var div = $("div");
+                div.html("你好");//设置标签体
+                div.css("backgroundColor", "#fbba1c").css("color", "#fb647a");//设置样式
+            });
+        });
+    </script>
+</head>
+<body>
+<div><span>123</span></div>
+<div>123</div>
+<div>123</div>
+<div>123</div>
+<button>点我</button>
+</body>
+</html>

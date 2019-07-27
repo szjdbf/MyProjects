@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>css和html结合</title>
+    <style>
+        /*都被选择*/
+        /*div, p {*/
+        /*color: #ff5bd4;*/
+        /*}*/
+
+        /*div内的p标签（不限父子）*/
+        div p {
+            color: dimgrey;
+        }
+
+        /*div的p标签（父子）*/
+        div > p {
+            color: red;
+        }
+
+        /*标签带属性的*/
+        input[name="username"] {
+            color: yellow;
+        }
+
+        /*属性值包含a的*/
+        [a~='a'] {
+
+        }
+
+        /*初始化*/
+        a:link {
+            color: #ff8b52;
+        }
+
+        /*悬浮*/
+        a:hover {
+            color: darkgrey;
+        }
+
+        /*被点击*/
+        a:active {
+            color: gold;
+        }
+
+        /*访问后*/
+        a:visited {
+            color: springgreen;
+        }
+
+    </style>
+</head>
+<body>
+
+<a href="http://www.baidu.com">百度</a>
+
+<div>
+    <p>你好</p>
+
+    我是啥
+</div>
+<p>我很好</p>
+
+
+<form action="http://www.baidu.com"><input type="text" name="wd">请输入</form>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格全选</title>
+    <style>
+        table {
+            border: 1px solid;
+            width: 500px;
+            border-spacing: 0;
+            margin: auto;
+        }
+
+        td, th {
+            text-align: center;
+            border: 1px solid;
+        }
+
+        div {
+            margin-top: 10px;
+            margin-left: 43%;
+        }
+
+        .aaa {
+            background-color: #0099FF;
+        }
+    </style>
+
+
+</head>
+<body>
+<script>
+    window.onload = function () {
+        //全选框
+        var selectAll = document.getElementById("selectAll");
+        selectAll.onclick = function () {
+            var checks = document.getElementsByClassName("check");
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = true;
+            }
+
+        };
+
+        //全不选
+        var unSelectAll = document.getElementById("unSelectAll");
+        unSelectAll.onclick = function () {
+            var checks = document.getElementsByClassName("check");
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = false;
+            }
+        };
+
+
+        //第一个选择框
+        var first = document.getElementById("first");
+        first.onclick = function () {
+            var checks = document.getElementsByClassName("check");
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = first.checked;
+            }
+        };
+
+        //反选
+        var selectRev = document.getElementById("selectRev");
+        selectRev.onclick = function () {
+            var checks = document.getElementsByClassName("check");
+            for (var i = 1; i < checks.length; i++) {
+                checks[i].checked = !checks[i].checked;
+            }
+        };
+
+        //添加背景色
+        var trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function () {
+                this.setAttribute("class", "aaa");
+            }
+        }
+
+        //移除背景色
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseout = function () {
+                this.removeAttribute("class");
+            }
+        }
+    }
+</script>
+
+<table>
+    <caption>学生信息表</caption>
+    <tr>
+        <th><input type="checkbox" class="check" id="first"></th>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" class="check"></td>
+        <td>1</td>
+        <td>令狐冲</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" class="check"></td>
+        <td>2</td>
+        <td>任我行</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" class="check"></td>
+        <td>3</td>
+        <td>岳不群</td>
+        <td>?</td>
+        <td><a href="javascript:void(0);">删除</a></td>
+    </tr>
+
+</table>
+<div>
+    <input type="button" id="selectAll" value="全选">
+    <input type="button" id="unSelectAll" value="全不选">
+    <input type="button" id="selectRev" value="反选">
+</div>
+</body>
+</html>

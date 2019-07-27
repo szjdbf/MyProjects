@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS控制CSS</title>
+    <style>
+        .aaa {
+            color: #0cd6ff;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<span id="span">你好</span>
+<button id="b">点击</button>
+<script>
+    var span = document.getElementById("span");
+    var b = document.getElementById("b");
+    b.onclick = function () {
+        span.className = "aaa";
+    }
+</script>
+</body>
+</html>

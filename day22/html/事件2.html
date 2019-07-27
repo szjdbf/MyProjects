@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>事件2</title>
+    <script>
+        onload = function () {
+            var img = document.getElementById("img");
+            //鼠标按下
+            img.onmousedown = function () {
+                //更换图片
+                img.src = "../image/1.jpg";
+            };
+            //鼠标放开
+            img.onmouseup = function () {
+                //更换图片
+                img.src = "../image/2.jpg";
+            };
+        }
+    </script>
+</head>
+<body>
+<img src="../image/2.jpg" id="img" height="300"/>
+</body>
+</html>
